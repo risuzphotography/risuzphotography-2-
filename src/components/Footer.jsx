@@ -11,7 +11,7 @@ function Footer() {
             <span className="footer-logo-mark">R</span>
             <div>
               <h3>Risuz Photography</h3>
-              <p>Capturing moments with creativity, emotion, and timeless photography.</p>
+              <p>Capture your moments, preserve your memories!</p>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p>© {year} Risuz Photography. All rights reserved.</p>
-          <p>Designed for timeless stories and private client galleries.</p>
+          <p>Designed & Developed by Sanithu Udaneth.</p>
         </div>
       </div>
     </footer>
