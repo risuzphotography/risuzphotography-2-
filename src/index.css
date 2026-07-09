@@ -433,6 +433,20 @@ textarea.form-control {
   flex-shrink: 0;
 }
 
+.site-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(64, 224, 208, 0.35);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.04),
+    0 0 24px rgba(64, 224, 208, 0.18);
+  background: #111;
+  flex-shrink: 0;
+}
+
 .logo-mark {
   width: 48px;
   height: 48px;
