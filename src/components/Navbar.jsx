@@ -12,7 +12,6 @@ return ( <header className="navbar"> <div className="container navbar-container"
          className="site-logo"
        /> <div className="logo-text"> <span className="logo-title">Risuz Photography</span> <span className="logo-subtitle">Capture the moment</span> </div> </Link>
 
-```
     <button
       className={`menu-toggle ${menuOpen ? "active" : ""}`}
       onClick={() => setMenuOpen((prev) => !prev)}
