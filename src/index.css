@@ -1600,3 +1600,322 @@ transition:.45s;
 .about-cta-box:hover{
 box-shadow:0 30px 80px rgba(0,0,0,.12);
 }
+
+/* ==========================================
+   LUXURY PORTFOLIO
+========================================== */
+
+.portfolio-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 34px;
+  margin-top: 40px;
+}
+
+/* Card */
+
+.portfolio-page-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.07),
+      rgba(255,255,255,.02)
+    );
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(22px);
+  transition: all .45s ease;
+  box-shadow:
+      0 20px 60px rgba(0,0,0,.35);
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-page-card:hover{
+    transform:translateY(-12px);
+    border-color:rgba(139,92,246,.45);
+
+    box-shadow:
+    0 35px 80px rgba(0,0,0,.45),
+    0 0 35px rgba(139,92,246,.22);
+}
+
+/* Image */
+
+.portfolio-page-image-wrap{
+    position:relative;
+    overflow:hidden;
+    height:300px;
+}
+
+.portfolio-page-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:
+        transform .8s ease,
+        filter .8s ease;
+}
+
+.portfolio-page-card:hover
+.portfolio-page-image{
+
+    transform:scale(1.12);
+    filter:brightness(.75);
+}
+
+/* Dark gradient */
+
+.portfolio-page-image-wrap::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.78),
+        rgba(0,0,0,.08),
+        transparent
+    );
+
+    pointer-events:none;
+}
+
+/* Badge */
+
+.portfolio-category-badge{
+
+    position:absolute;
+    top:18px;
+    left:18px;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    color:#fff;
+
+    font-size:.78rem;
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    z-index:5;
+}
+
+/* Card body */
+
+.portfolio-page-card .card-body{
+
+    padding:28px;
+}
+
+.portfolio-page-card h3{
+
+    font-size:1.55rem;
+
+    margin-bottom:14px;
+
+    color:#fff;
+
+    transition:.35s;
+}
+
+.portfolio-page-card:hover h3{
+
+    color:#b794ff;
+}
+
+.portfolio-page-card p{
+
+    color:rgba(255,255,255,.74);
+
+    line-height:1.8;
+
+    font-size:.98rem;
+}
+
+/* ==========================================
+   COMING SOON GLASS
+========================================== */
+
+.portfolio-coming-soon{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    rgba(10,10,10,.45);
+
+    backdrop-filter:blur(16px);
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:8;
+}
+
+.portfolio-page-card:hover
+.portfolio-coming-soon{
+
+    opacity:1;
+}
+
+.portfolio-coming-soon h3{
+
+    color:white;
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+    letter-spacing:.08em;
+}
+
+.portfolio-coming-soon p{
+
+    color:rgba(255,255,255,.85);
+
+    max-width:240px;
+
+    line-height:1.7;
+}
+
+/* ==========================================
+   GOLD SHINE
+========================================== */
+
+.portfolio-page-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-50%;
+
+    width:60%;
+
+    height:300%;
+
+    background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.18),
+      transparent
+    );
+
+    transform:rotate(25deg);
+
+    transition:1s;
+
+    z-index:6;
+}
+
+.portfolio-page-card:hover::before{
+
+    left:140%;
+}
+
+/* ==========================================
+   PREMIUM BORDER GLOW
+========================================== */
+
+.portfolio-page-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:26px;
+
+    padding:1px;
+
+    background:
+
+    linear-gradient(
+      135deg,
+      rgba(139,92,246,.6),
+      transparent,
+      rgba(255,255,255,.1)
+    );
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.4s;
+}
+
+.portfolio-page-card:hover::after{
+
+    opacity:1;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.portfolio-page-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.portfolio-page-image-wrap{
+
+height:240px;
+
+}
+
+.portfolio-page-card .card-body{
+
+padding:22px;
+
+}
+
+.portfolio-coming-soon h3{
+
+font-size:1.5rem;
+
+}
+
+}

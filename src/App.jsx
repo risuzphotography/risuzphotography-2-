@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EventGallery from "./pages/EventGallery";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -32,6 +33,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
 
           <Route path="/client-login" element={<ClientLogin />} />
+          <Route path="/events/:id" element={<EventGallery />} />
 
           <Route
             path="/client-dashboard"

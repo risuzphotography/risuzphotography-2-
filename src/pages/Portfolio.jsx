@@ -4,52 +4,67 @@ import { motion } from "framer-motion";
 function Portfolio() {
   const portfolioItems = [
     {
-      title: "Wedding Photography",
-      category: "Weddings",
+      title: "Weddings",
+      category: "Luxury Collection",
       description:
-        "Elegant storytelling, candid moments, couple portraits, and full wedding day coverage.",
+        "Elegant storytelling, candid moments, emotional ceremonies, and timeless portraits that preserve every unforgettable moment of your special day.",
       image:
-        "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=80",
+      link: "#",
+      comingSoon: true,
     },
     {
-      title: "Portrait Sessions",
-      category: "Portraits",
+      title: "Portraits",
+      category: "Luxury Collection",
       description:
-        "Personal, graduation, and lifestyle portraits with a clean and expressive style.",
+        "Professional and creative portraits that capture personality, confidence, and genuine expressions for individuals, couples, and professionals.",
       image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1400&q=80",
+      link: "#",
+      comingSoon: true,
     },
     {
-      title: "Event Coverage",
-      category: "Events",
+
+      title: "Events",
+      category: "Luxury Collection",
       description:
-        "Professional photography for birthdays, private events, celebrations, and gatherings.",
-      image:
-        "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+        "From corporate functions to private celebrations, we document every important moment with natural, vibrant, and authentic photography.",
+      image: "/events/cover.jpg",
+
+      link: "/events/esala-perahera-2026",
+
+      comingSoon: false,
+
     },
     {
-      title: "Couple Shoots",
-      category: "Lifestyle",
+      title: "Engagements",
+      category: "Luxury Collection",
       description:
-        "Natural and cinematic couple sessions designed around emotion, movement, and connection.",
+        "Romantic pre-wedding sessions featuring genuine emotions, beautiful locations, and timeless imagery that celebrates your love story.",
       image:
-        "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1400&q=80",
+      link: "#",
+      comingSoon: true,
     },
     {
-      title: "Graduation & Personal Sessions",
-      category: "Portraits",
+      title: "Commercial",
+      category: "Luxury Collection",
       description:
-        "Celebrate milestones with polished portraits that feel natural and memorable.",
+        "High-quality photography for brands, businesses, products, and marketing campaigns designed to elevate your visual identity.",
       image:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80",
+      link: "#",
+      comingSoon: true,
     },
     {
-      title: "Creative Lifestyle Photography",
-      category: "Creative",
+      title: "Real Estate",
+      category: "Luxury Collection",
       description:
-        "Visual storytelling sessions built around personality, mood, and location.",
+        "Bright, professionally composed interior and exterior photography that showcases properties with clarity, style, and maximum visual appeal.",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1400&q=80",
+      link: "#",
+      comingSoon: true,
     },
   ];
 
@@ -57,58 +72,52 @@ function Portfolio() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.7 }}
     >
       {/* Header */}
       <section className="page-header">
         <motion.div
           className="container"
-          initial={{
-            opacity: 0,
-            y: 60,
-            filter: "blur(10px)",
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-          }}
-          transition={{
-            duration: 0.9,
-          }}
+          initial={{ opacity: 0, y: 60, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8 }}
         >
           <h1>Portfolio</h1>
 
           <p>
-            Explore a collection of wedding stories, portraits, events, and
-            creative sessions captured through Risuz Photography.
+            Discover a curated collection of weddings, portraits, events,
+            commercial projects, and lifestyle photography created with timeless
+            storytelling and refined visual artistry.
           </p>
         </motion.div>
       </section>
 
-      {/* Portfolio */}
+      {/* Portfolio Grid */}
       <section className="section">
         <div className="container">
+
           <div className="portfolio-page-grid">
+
             {portfolioItems.map((item, index) => (
-              <motion.article
+
+              <motion.a
+                href={item.comingSoon ? "#" : item.link}
                 key={item.title}
                 className="card portfolio-page-card"
                 initial={{
                   opacity: 0,
                   y: 80,
-                  scale: 0.92,
+                  rotateX: 10,
                 }}
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  scale: 1,
+                  rotateX: 0,
                 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.65,
-                  delay: index * 0.12,
+                  duration: 0.7,
+                  delay: index * 0.1,
                 }}
                 whileHover={{
                   y: -14,
@@ -116,6 +125,7 @@ function Portfolio() {
                 }}
               >
                 <div className="portfolio-page-image-wrap">
+
                   <motion.img
                     src={item.image}
                     alt={item.title}
@@ -124,50 +134,62 @@ function Portfolio() {
                       scale: 1.12,
                     }}
                     transition={{
-                      duration: 0.7,
+                      duration: 0.6,
                     }}
                   />
 
-                  <motion.span
-                    className="portfolio-category-badge"
-                    initial={{
-                      opacity: 0,
-                      x: -20,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: index * 0.12 + 0.2,
-                    }}
-                  >
+                  <span className="portfolio-category-badge">
                     {item.category}
-                  </motion.span>
+                  </span>
+
+                  {item.comingSoon && (
+                    <motion.div
+                      className="portfolio-coming-soon"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.35 }}
+                    >
+                      <h3>Coming Soon</h3>
+                      <p>
+                        This gallery will be available soon.
+                      </p>
+                    </motion.div>
+                  )}
+
                 </div>
 
-                <motion.div
-                  className="card-body"
-                  initial={{
-                    opacity: 0,
-                    y: 25,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.12 + 0.3,
-                  }}
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </motion.div>
-              </motion.article>
+                <div className="card-body">
+
+                  <motion.h3
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: 0.25 + index * 0.08,
+                    }}
+                  >
+                    {item.title}
+                  </motion.h3>
+
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: 0.35 + index * 0.08,
+                    }}
+                  >
+                    {item.description}
+                  </motion.p>
+
+                </div>
+
+              </motion.a>
+
             ))}
+
           </div>
+
         </div>
       </section>
     </motion.div>
