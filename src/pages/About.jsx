@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function About() {
@@ -20,8 +18,6 @@ function About() {
 
   return (
     <>
-      <Navbar />
-
       <section className="page-header">
         <div className="container">
           <h1>About Risuz Photography</h1>
@@ -37,7 +33,9 @@ function About() {
         <div className="container about-grid">
           <div className="about-content">
             <span className="badge">Behind the Camera</span>
-            <h2 className="section-title">Photography with emotion, detail, and style.</h2>
+            <h2 className="section-title">
+              Photography with emotion, detail, and style.
+            </h2>
 
             <p className="about-text">
               Risuz Photography is built around storytelling. My goal is not just
@@ -95,23 +93,23 @@ function About() {
       </section>
 
       <section className="section">
-        <div className="container about-cta-box">
-          <div>
-            <span className="badge">Let’s create something memorable</span>
-            <h2>Ready to work together?</h2>
-            <p>
-              Whether you need wedding coverage, portraits, or event photography,
-              I’d love to hear about your plans and help bring them to life.
-            </p>
-          </div>
+        <div className="container">
+          <div className="about-cta-box">
+            <div>
+              <span className="badge">Let’s create something memorable</span>
+              <h2>Ready to work together?</h2>
+              <p>
+                Whether you need wedding coverage, portraits, or event photography,
+                I’d love to hear about your plans and help bring them to life.
+              </p>
+            </div>
 
-          <Link to="/contact" className="btn btn-secondary">
-            Get in Touch
-          </Link>
+            <Link to="/contact" className="btn btn-outline">
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

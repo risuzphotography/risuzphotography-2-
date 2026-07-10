@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -11,25 +14,31 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Public pages */}
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+      <Navbar />
 
-        {/* Client pages */}
-        <Route path="/client-login" element={<ClientLogin />} />
-        <Route
-          path="/client-dashboard"
-          element={
-            <ProtectedRoute>
-              <ClientDashboard />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <main>
+        <Routes>
+          {/* Public pages */}
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+
+          {/* Client pages */}
+          <Route path="/client-login" element={<ClientLogin />} />
+          <Route
+            path="/client-dashboard"
+            element={
+              <ProtectedRoute>
+                <ClientDashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
+
+      <Footer />
     </BrowserRouter>
   );
 }

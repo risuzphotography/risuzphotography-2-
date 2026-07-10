@@ -1,6 +1,4 @@
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -63,7 +61,6 @@ function Home() {
 
   return (
     <>
-      <Navbar />
       <Hero />
 
       <section className="section">
@@ -79,7 +76,11 @@ function Home() {
           <div className="grid grid-3">
             {portfolioItems.map((item) => (
               <div className="card portfolio-card" key={item.title}>
-                <img src={item.image} alt={item.title} className="portfolio-card-image" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="portfolio-card-image"
+                />
                 <div className="card-body">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -164,15 +165,13 @@ function Home() {
               <Link to="/contact" className="btn btn-primary">
                 Contact Me
               </Link>
-              <Link to="/client-login" className="btn btn-secondary">
+              <Link to="/client-login" className="btn btn-outline">
                 Client Login
               </Link>
             </div>
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

@@ -3,7 +3,7 @@ import {
 FaWhatsapp,
 FaPhoneAlt,
 FaFacebookF,
-FaEnvelope
+FaEnvelope,
 } from "react-icons/fa";
 
 export default function Contact() {
@@ -15,7 +15,7 @@ subtitle: "Fastest way to reach me",
 value: "+94 76 114 5268",
 gradient: "linear-gradient(135deg, #25D366 0%, #1ebe5d 100%)",
 link: "https://wa.me/94761145268",
-button: "Chat Now"
+button: "Chat Now",
 },
 {
 icon: <FaPhoneAlt />,
@@ -24,7 +24,7 @@ subtitle: "Talk directly for bookings",
 value: "076 114 5268",
 gradient: "linear-gradient(135deg, #40E0D0 0%, #00bcd4 100%)",
 link: "tel:+94761145268",
-button: "Call Now"
+button: "Call Now",
 },
 {
 icon: <FaFacebookF />,
@@ -33,17 +33,17 @@ subtitle: "See updates and connect",
 value: "Risuz Photography",
 gradient: "linear-gradient(135deg, #1877F2 0%, #0d5ed7 100%)",
 link: "https://web.facebook.com/Risuzphotography/",
-button: "Visit Page"
+button: "Visit Page",
 },
 {
 icon: <FaEnvelope />,
 title: "Email",
 subtitle: "For inquiries and bookings",
-value: "[risuzphotography@gmail.com](mailto:risuzphotography@gmail.com)",
+value: "[risuzphotography@gmail.com]",
 gradient: "linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)",
 link: "mailto:risuzphotography@gmail.com",
-button: "Send Email"
-}
+button: "Send Email",
+},
 ];
 
 return ( <section className="contact-page"> <div className="contact-bg-glow contact-bg-glow-1"></div> <div className="contact-bg-glow contact-bg-glow-2"></div>

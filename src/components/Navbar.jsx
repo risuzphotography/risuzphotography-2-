@@ -7,10 +7,10 @@ const [menuOpen, setMenuOpen] = useState(false);
 const closeMenu = () => setMenuOpen(false);
 
 return ( <header className="navbar"> <div className="container navbar-container"> <Link to="/" className="navbar-logo" onClick={closeMenu}> <img
-         src="/logo.jpg"
+         src="/logo.png"
          alt="Risuz Photography Logo"
          className="site-logo"
-       /> <div className="logo-text"> <span className="logo-title">Risuz Photography</span> <span className="logo-subtitle">Capture the moment</span> </div> </Link>
+       /> <div className="logo-text"> <span className="logo-title">Risuz Photography</span> <span className="logo-subtitle">Ayubowan!</span> </div> </Link>
 
     <button
       className={`menu-toggle ${menuOpen ? "active" : ""}`}

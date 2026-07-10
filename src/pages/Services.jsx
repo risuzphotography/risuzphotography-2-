@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function Services() {
@@ -74,8 +72,6 @@ function Services() {
 
   return (
     <>
-      <Navbar />
-
       <section className="page-header">
         <div className="container">
           <h1>Services</h1>
@@ -94,7 +90,9 @@ function Services() {
               <article className="card service-page-card" key={service.title}>
                 <div className="card-body">
                   <h3>{service.title}</h3>
-                  <p className="service-page-description">{service.description}</p>
+                  <p className="service-page-description">
+                    {service.description}
+                  </p>
 
                   <ul className="service-feature-list">
                     {service.includes.map((item) => (
@@ -126,17 +124,14 @@ function Services() {
               </p>
             </div>
 
-            <Link to="/contact" className="btn btn-secondary">
+            <Link to="/contact" className="btn btn-primary">
               Contact for Details
             </Link>
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
 
 export default Services;
-

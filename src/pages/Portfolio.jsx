@@ -1,5 +1,4 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import React from "react";
 
 function Portfolio() {
   const portfolioItems = [
@@ -55,8 +54,6 @@ function Portfolio() {
 
   return (
     <>
-      <Navbar />
-
       <section className="page-header">
         <div className="container">
           <h1>Portfolio</h1>
@@ -73,8 +70,14 @@ function Portfolio() {
             {portfolioItems.map((item) => (
               <article className="card portfolio-page-card" key={item.title}>
                 <div className="portfolio-page-image-wrap">
-                  <img src={item.image} alt={item.title} className="portfolio-page-image" />
-                  <span className="portfolio-category-badge">{item.category}</span>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="portfolio-page-image"
+                  />
+                  <span className="portfolio-category-badge">
+                    {item.category}
+                  </span>
                 </div>
 
                 <div className="card-body">
@@ -86,11 +89,8 @@ function Portfolio() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
 
 export default Portfolio;
-
