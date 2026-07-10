@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import ClientLogin from "./pages/ClientLogin";
 import ClientDashboard from "./pages/ClientDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
 </>
 
       <Navbar />
+      
+      <ScrollToTop />
 
       <main>
         <Routes>
