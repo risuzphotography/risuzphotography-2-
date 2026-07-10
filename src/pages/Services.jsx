@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Services() {
   const services = [
@@ -72,31 +73,65 @@ function Services() {
 
   return (
     <>
+      {/* Header */}
       <section className="page-header">
-        <div className="container">
+        <motion.div
+          className="container"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h1>Services</h1>
+
           <p>
             Photography services designed for weddings, portraits, events, and
             personal stories — with a smooth experience from booking to final
             gallery delivery.
           </p>
-        </div>
+        </motion.div>
       </section>
 
+      {/* Services */}
       <section className="section">
         <div className="container">
           <div className="services-page-grid">
-            {services.map((service) => (
-              <article className="card service-page-card" key={service.title}>
+            {services.map((service, index) => (
+              <motion.article
+                key={service.title}
+                className="card service-page-card"
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.12,
+                }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+              >
                 <div className="card-body">
                   <h3>{service.title}</h3>
+
                   <p className="service-page-description">
                     {service.description}
                   </p>
 
                   <ul className="service-feature-list">
-                    {service.includes.map((item) => (
-                      <li key={item}>{item}</li>
+                    {service.includes.map((item, i) => (
+                      <motion.li
+                        key={item}
+                        initial={{ opacity: 0, x: -15 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          delay: i * 0.08,
+                          duration: 0.35,
+                        }}
+                      >
+                        {item}
+                      </motion.li>
                     ))}
                   </ul>
 
@@ -106,20 +141,29 @@ function Services() {
                     </Link>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
+      {/* CTA */}
       <section className="section bg-light">
         <div className="container">
-          <div className="services-cta-box">
+          <motion.div
+            className="services-cta-box"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             <div>
               <span className="badge">Need a custom shoot?</span>
-              <h2>Let’s plan a session that fits your story.</h2>
+
+              <h2>Let's plan a session that fits your story.</h2>
+
               <p>
-                If your event or photography idea doesn’t fit a standard
+                If your event or photography idea doesn't fit a standard
                 category, you can still get in touch for a custom session plan.
               </p>
             </div>
@@ -127,7 +171,7 @@ function Services() {
             <Link to="/contact" className="btn btn-primary">
               Contact for Details
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

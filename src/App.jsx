@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
+import ScrollReveal from "./components/ScrollReveal";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Services from "./pages/Services";
@@ -14,6 +14,13 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <BrowserRouter>
+    <>
+    <ScrollReveal />
+    <Routes>
+       ...
+    </Routes>
+</>
+
       <Navbar />
 
       <main>

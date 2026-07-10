@@ -63,24 +63,30 @@ function Home() {
     <>
       <Hero />
 
-      <section className="section">
+      {/* Featured Portfolio */}
+      <section className="section reveal">
         <div className="container">
-          <div className="text-center">
+
+          <div className="text-center reveal">
             <h2 className="section-title">Featured Portfolio</h2>
             <p className="section-subtitle">
-              A look at the stories, portraits, and celebrations captured through
-              Risuz Photography.
+              A look at the stories, portraits, and celebrations captured
+              through Risuz Photography.
             </p>
           </div>
 
           <div className="grid grid-3">
-            {portfolioItems.map((item) => (
-              <div className="card portfolio-card" key={item.title}>
+            {portfolioItems.map((item, index) => (
+              <div
+                key={item.title}
+                className={`card portfolio-card reveal-scale delay-${index + 1}`}
+              >
                 <img
                   src={item.image}
                   alt={item.title}
                   className="portfolio-card-image"
                 />
+
                 <div className="card-body">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -89,27 +95,33 @@ function Home() {
             ))}
           </div>
 
-          <div className="home-section-action">
+          <div className="home-section-action reveal">
             <Link to="/portfolio" className="btn btn-outline">
               View Full Portfolio
             </Link>
           </div>
+
         </div>
       </section>
 
-      <section className="section bg-light">
+      {/* Services */}
+      <section className="section bg-light reveal">
         <div className="container">
-          <div className="text-center">
+
+          <div className="text-center reveal">
             <h2 className="section-title">Photography Services</h2>
             <p className="section-subtitle">
-              Flexible photography services for weddings, portraits, events, and
-              personal stories.
+              Flexible photography services for weddings, portraits, events,
+              and personal stories.
             </p>
           </div>
 
           <div className="grid grid-3">
-            {services.map((service) => (
-              <div className="card service-card" key={service.title}>
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className={`card service-card reveal delay-${index + 1}`}
+              >
                 <div className="card-body">
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
@@ -118,18 +130,24 @@ function Home() {
             ))}
           </div>
 
-          <div className="home-section-action">
+          <div className="home-section-action reveal">
             <Link to="/services" className="btn btn-primary">
               Explore Services
             </Link>
           </div>
+
         </div>
       </section>
 
-      <section className="section">
+      {/* Why Choose */}
+      <section className="section reveal">
         <div className="container">
-          <div className="text-center">
-            <h2 className="section-title">Why Choose Risuz Photography</h2>
+
+          <div className="text-center reveal">
+            <h2 className="section-title">
+              Why Choose Risuz Photography
+            </h2>
+
             <p className="section-subtitle">
               Photography that focuses on emotion, detail, and a smooth client
               experience from booking to gallery delivery.
@@ -137,8 +155,11 @@ function Home() {
           </div>
 
           <div className="grid grid-3">
-            {reasons.map((reason) => (
-              <div className="card reason-card" key={reason.title}>
+            {reasons.map((reason, index) => (
+              <div
+                key={reason.title}
+                className={`card reason-card reveal-scale delay-${index + 1}`}
+              >
                 <div className="card-body">
                   <h3>{reason.title}</h3>
                   <p>{reason.text}</p>
@@ -146,17 +167,22 @@ function Home() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      <section className="section cta-section">
+      {/* CTA */}
+      <section className="section cta-section reveal">
         <div className="container">
-          <div className="cta-box">
+
+          <div className="cta-box reveal">
             <div>
               <span className="badge">Book a Session</span>
+
               <h2>Ready to capture your next story?</h2>
+
               <p>
-                Whether it’s a wedding, portrait session, or private event,
+                Whether it's a wedding, portrait session, or private event,
                 Risuz Photography is ready to create timeless images for you.
               </p>
             </div>
@@ -165,11 +191,13 @@ function Home() {
               <Link to="/contact" className="btn btn-primary">
                 Contact Me
               </Link>
+
               <Link to="/client-login" className="btn btn-outline">
                 Client Login
               </Link>
             </div>
           </div>
+
         </div>
       </section>
     </>

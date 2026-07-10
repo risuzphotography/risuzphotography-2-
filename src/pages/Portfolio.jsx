@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Portfolio() {
   const portfolioItems = [
@@ -53,43 +54,123 @@ function Portfolio() {
   ];
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      {/* Header */}
       <section className="page-header">
-        <div className="container">
+        <motion.div
+          className="container"
+          initial={{
+            opacity: 0,
+            y: 60,
+            filter: "blur(10px)",
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            duration: 0.9,
+          }}
+        >
           <h1>Portfolio</h1>
+
           <p>
             Explore a collection of wedding stories, portraits, events, and
             creative sessions captured through Risuz Photography.
           </p>
-        </div>
+        </motion.div>
       </section>
 
+      {/* Portfolio */}
       <section className="section">
         <div className="container">
           <div className="portfolio-page-grid">
-            {portfolioItems.map((item) => (
-              <article className="card portfolio-page-card" key={item.title}>
+            {portfolioItems.map((item, index) => (
+              <motion.article
+                key={item.title}
+                className="card portfolio-page-card"
+                initial={{
+                  opacity: 0,
+                  y: 80,
+                  scale: 0.92,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.65,
+                  delay: index * 0.12,
+                }}
+                whileHover={{
+                  y: -14,
+                  scale: 1.03,
+                }}
+              >
                 <div className="portfolio-page-image-wrap">
-                  <img
+                  <motion.img
                     src={item.image}
                     alt={item.title}
                     className="portfolio-page-image"
+                    whileHover={{
+                      scale: 1.12,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                    }}
                   />
-                  <span className="portfolio-category-badge">
+
+                  <motion.span
+                    className="portfolio-category-badge"
+                    initial={{
+                      opacity: 0,
+                      x: -20,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    viewport={{ once: true }}
+                    transition={{
+                      delay: index * 0.12 + 0.2,
+                    }}
+                  >
                     {item.category}
-                  </span>
+                  </motion.span>
                 </div>
 
-                <div className="card-body">
+                <motion.div
+                  className="card-body"
+                  initial={{
+                    opacity: 0,
+                    y: 25,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true }}
+                  transition={{
+                    delay: index * 0.12 + 0.3,
+                  }}
+                >
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                </div>
-              </article>
+                </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }
 
