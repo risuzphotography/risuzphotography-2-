@@ -43,24 +43,9 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="hero-image-card">
-            <img
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
-              alt="Camera and photography setup"
-            />
+          <div className="hero-visual">
+           <div className="hero-glow"></div>
           </div>
-
-          <div className="hero-floating-card top-card">
-            <span className="floating-label">Featured Style</span>
-            <h4>Weddings • Portraits • Events</h4>
-          </div>
-
-          <div className="hero-floating-card bottom-card">
-            <span className="floating-label">Client Access</span>
-            <h4>Private gallery login & album delivery</h4>
-          </div>
-        </div>
       </div>
     </section>
   );
