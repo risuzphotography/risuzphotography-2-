@@ -1,3 +1,4 @@
+import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import { Link } from "react-router-dom";
 
@@ -47,28 +48,39 @@ function Home() {
   const reasons = [
     {
       title: "Creative Direction",
-      text: "A modern visual style with natural storytelling, composition, and clean editing.",
+      text:
+        "A modern visual style with natural storytelling, composition, and clean editing.",
     },
     {
       title: "Private Client Access",
-      text: "Clients can log in and access their private Google Photos gallery with ease.",
+      text:
+        "Clients can log in and access their private Google Photos gallery with ease.",
     },
     {
       title: "Professional Delivery",
-      text: "Fast communication, organized workflow, and polished final images.",
+      text:
+        "Fast communication, organized workflow, and polished final images.",
     },
   ];
 
   return (
     <>
+      <SEO
+        title="Risuz Photography | Wedding, Portrait & Event Photographer in Sri Lanka"
+        description="Professional wedding, portrait, graduation and event photography by Risuz Photography. Timeless storytelling and premium photography services in Sri Lanka."
+        keywords="Risuz Photography, Wedding Photographer Sri Lanka, Portrait Photographer, Event Photography, Graduation Photography, Photographer Sri Lanka"
+      />
+
       <Hero />
 
-      {/* Featured Portfolio */}
+      {/* ================= Featured Portfolio ================= */}
+
       <section className="section reveal">
         <div className="container">
 
           <div className="text-center reveal">
             <h2 className="section-title">Featured Portfolio</h2>
+
             <p className="section-subtitle">
               A look at the stories, portraits, and celebrations captured
               through Risuz Photography.
@@ -89,6 +101,7 @@ function Home() {
 
                 <div className="card-body">
                   <h3>{item.title}</h3>
+
                   <p>{item.description}</p>
                 </div>
               </div>
@@ -104,15 +117,19 @@ function Home() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* ================= Services ================= */}
+
       <section className="section bg-light reveal">
         <div className="container">
 
           <div className="text-center reveal">
-            <h2 className="section-title">Photography Services</h2>
+            <h2 className="section-title">
+              Photography Services
+            </h2>
+
             <p className="section-subtitle">
-              Flexible photography services for weddings, portraits, events,
-              and personal stories.
+              Flexible photography services for weddings,
+              portraits, events, and personal stories.
             </p>
           </div>
 
@@ -124,6 +141,7 @@ function Home() {
               >
                 <div className="card-body">
                   <h3>{service.title}</h3>
+
                   <p>{service.description}</p>
                 </div>
               </div>
@@ -139,7 +157,8 @@ function Home() {
         </div>
       </section>
 
-      {/* Why Choose */}
+      {/* ================= Why Choose ================= */}
+
       <section className="section reveal">
         <div className="container">
 
@@ -149,8 +168,9 @@ function Home() {
             </h2>
 
             <p className="section-subtitle">
-              Photography that focuses on emotion, detail, and a smooth client
-              experience from booking to gallery delivery.
+              Photography that focuses on emotion,
+              detail, and a smooth client experience
+              from booking to gallery delivery.
             </p>
           </div>
 
@@ -162,6 +182,7 @@ function Home() {
               >
                 <div className="card-body">
                   <h3>{reason.title}</h3>
+
                   <p>{reason.text}</p>
                 </div>
               </div>
@@ -171,35 +192,52 @@ function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ================= CTA ================= */}
+
       <section className="section cta-section reveal">
         <div className="container">
 
           <div className="cta-box reveal">
-            <div>
-              <span className="badge">Book a Session</span>
 
-              <h2>Ready to capture your next story?</h2>
+            <div>
+              <span className="badge">
+                Book a Session
+              </span>
+
+              <h2>
+                Ready to capture your next story?
+              </h2>
 
               <p>
-                Whether it's a wedding, portrait session, or private event,
-                Risuz Photography is ready to create timeless images for you.
+                Whether it's a wedding, portrait session,
+                or private event, Risuz Photography is
+                ready to create timeless images for you.
               </p>
             </div>
 
             <div className="cta-actions">
-              <Link to="/contact" className="btn btn-primary">
+
+              <Link
+                to="/contact"
+                className="btn btn-primary"
+              >
                 Contact Me
               </Link>
 
-              <Link to="/client-login" className="btn btn-outline">
+              <Link
+                to="/client-login"
+                className="btn btn-outline"
+              >
                 Client Login
               </Link>
+
             </div>
+
           </div>
 
         </div>
       </section>
+
     </>
   );
 }
