@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EventGallery from "./pages/EventGallery";
-
+import Events from "./pages/Events";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
@@ -31,6 +31,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
 
           <Route path="/client-login" element={<ClientLogin />} />
           <Route path="/events/:id" element={<EventGallery />} />

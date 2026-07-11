@@ -23,19 +23,18 @@ function Portfolio() {
       link: "#",
       comingSoon: true,
     },
-    {
 
+    {
       title: "Events",
       category: "Luxury Collection",
       description:
         "From corporate functions to private celebrations, we document every important moment with natural, vibrant, and authentic photography.",
-      image: "/events/cover.jpg",
-
-      link: "/events/esala-perahera-2026",
-
+      image:
+       "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=80",
+      link: "/events",
       comingSoon: false,
+},
 
-    },
     {
       title: "Engagements",
       category: "Luxury Collection",
